@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription, Observable } from 'rxjs';
 import { ShowsService } from 'src/app/services/shows.service';
 import { map } from 'rxjs/operators';
+import { Show } from 'src/app/shared/models/show';
 
 @Component({
   selector: 'app-show',
@@ -11,6 +12,7 @@ import { map } from 'rxjs/operators';
 })
 export class ShowComponent implements OnInit, OnDestroy {
 
+  private show: Observable<Show>;
   private subscriptions: Subscription;
 
   constructor(
@@ -26,7 +28,7 @@ export class ShowComponent implements OnInit, OnDestroy {
    * @returns {Observable<string>}
    * @memberof ShowComponent
    */
-  getShowId(): Observable<string>{
+  getShowId(): Observable<number>{
     return this.activeRoute.params.pipe(map(routeParams => {
       return routeParams.id;
     }));
@@ -35,7 +37,7 @@ export class ShowComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const subscription = this.getShowId().subscribe(
       id => {
-        console.log('id', id);
+        this.show = this.showsService.getShowById(id);
       }
     );
     this.subscriptions.add(subscription);
