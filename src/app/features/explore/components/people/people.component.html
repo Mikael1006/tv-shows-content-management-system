@@ -1,0 +1,8 @@
+<div *ngIf="person">
+    <img src="{{ person.image.medium }}">
+    <p><b>Name:</b> {{ person.name }}</p>
+    <p *ngIf="person.country"><b>Country:</b> {{ person.country.name }}</p>
+    <p *ngIf="person.birthday"><b>Birthday:</b> {{ person.birthday }}</p>
+    <p *ngIf="person.deathday"><b>Date of death:</b> {{ person.deathday }}</p>
+    <p *ngIf="person.gender"><b>Gender:</b> {{ person.gender }}</p>
+</div>

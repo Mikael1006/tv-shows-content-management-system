@@ -6,6 +6,7 @@ import { Show } from '../shared/models/show';
 import { Episode } from '../shared/models/episode';
 import { Season } from '../shared/models/season';
 import { Cast } from '../shared/models/cast';
+import { Person } from '../shared/models/person';
 
 @Injectable()
 export class ShowsService {
@@ -13,6 +14,7 @@ export class ShowsService {
     private searchUrl = `${this.apiUrl}/search/shows`;
     private showsUrl = `${this.apiUrl}/shows`;
     private episodesUrl = `${this.apiUrl}/episodes`;
+    private peopleUrl = `${this.apiUrl}/people`;
     private seasonsUrl = `${this.apiUrl}/seasons`;
 
     constructor(
@@ -50,6 +52,17 @@ export class ShowsService {
      */
     getEpisodeById(id: number): Observable<Episode>{
         return this.http.get<Episode>(`${this.episodesUrl}/${id}`);
+    }
+
+    /**
+     * get people by id
+     *
+     * @param {number} id
+     * @returns {Observable<Person>}
+     * @memberof ShowsService
+     */
+    getPersonById(id: number): Observable<Person>{
+        return this.http.get<Person>(`${this.peopleUrl}/${id}`);
     }
 
     /**

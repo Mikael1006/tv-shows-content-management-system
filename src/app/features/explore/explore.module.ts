@@ -10,6 +10,7 @@ import { EpisodesComponent } from './components/episodes/episodes.component';
 import { SeasonComponent } from './components/season/season.component';
 import { EpisodeComponent } from './components/episode/episode.component';
 import { CastComponent } from './components/cast/cast.component';
+import { PeopleComponent } from './components/people/people.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CastComponent } from './components/cast/cast.component';
     EpisodesComponent,
     SeasonComponent,
     EpisodeComponent,
-    CastComponent
+    CastComponent,
+    PeopleComponent
   ],
   imports: [
     CommonModule,

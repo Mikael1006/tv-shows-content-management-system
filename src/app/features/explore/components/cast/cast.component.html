@@ -1,5 +1,5 @@
 <ul>
     <li *ngFor="let c of cast">
-      <b>{{ c.person.name }}</b> as {{ c.character.name }}
+        <a routerLink="/explore/people/{{ c.person.id }}" routerLinkActive="active"><b>{{ c.person.name }}</b></a> as {{ c.character.name }}
     </li>
 </ul>

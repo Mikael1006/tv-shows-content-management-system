@@ -8,6 +8,7 @@ import { InfoShowComponent } from './components/info-show/info-show.component';
 import { EpisodesComponent } from './components/episodes/episodes.component';
 import { EpisodeComponent } from './components/episode/episode.component';
 import { CastComponent } from './components/cast/cast.component';
+import { PeopleComponent } from './components/people/people.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
           { path: 'cast', component: CastComponent }
         ]
       },
-      { path: 'episodes/:id', component: EpisodeComponent }
+      { path: 'episodes/:id', component: EpisodeComponent },
+      { path: 'people/:id', component: PeopleComponent },
     ]
   }
 ];
