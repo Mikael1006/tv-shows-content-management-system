@@ -7,6 +7,7 @@ import { Episode } from '../shared/models/episode';
 import { Season } from '../shared/models/season';
 import { Cast } from '../shared/models/cast';
 import { Person } from '../shared/models/person';
+import { Schedule } from '../shared/models/schedule';
 
 @Injectable()
 export class ShowsService {
@@ -16,10 +17,21 @@ export class ShowsService {
     private episodesUrl = `${this.apiUrl}/episodes`;
     private peopleUrl = `${this.apiUrl}/people`;
     private seasonsUrl = `${this.apiUrl}/seasons`;
+    private scheduleUrl = `${this.apiUrl}/schedule`;
 
     constructor(
         private http: HttpClient
     ){}
+
+    /**
+     * get the schedule of the day
+     *
+     * @returns {Observable<Array<Schedule>>}
+     * @memberof ShowsService
+     */
+    getTodaySchedules(): Observable<Array<Schedule>>{
+        return this.http.get<Array<Schedule>>(`${this.scheduleUrl}`);
+    }
 
     /**
      * get the list of shows matching the query

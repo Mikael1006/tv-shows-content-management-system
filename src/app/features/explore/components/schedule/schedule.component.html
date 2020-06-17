@@ -1,1 +1,6 @@
-<p>schedule works!</p>
+<p>Schedule for the day</p>
+<ul>
+    <li *ngFor="let schedule of schedules">
+      <b>{{ schedule.name }}</b> {{ schedule.airdate }} {{ schedule.airtime }}
+    </li>
+</ul>
