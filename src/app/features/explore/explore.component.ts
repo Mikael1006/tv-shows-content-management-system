@@ -25,10 +25,7 @@ export class ExploreComponent implements OnInit {
   onSearchChange(searchValue: string){
     let navigationExtras;
     if (!searchValue) {
-      navigationExtras = {
-        relativeTo: this.route
-      };
-      this.router.navigate(['schedule'], navigationExtras);
+      this.goToHomePage();
     } else {
       navigationExtras = {
         relativeTo: this.route,
@@ -40,4 +37,24 @@ export class ExploreComponent implements OnInit {
     }
   }
 
+  /**
+   * go to home page
+   *
+   * @memberof ExploreComponent
+   */
+  goToHomePage(){
+    const navigationExtras = {
+      relativeTo: this.route
+    };
+    this.router.navigate(['schedule'], navigationExtras);
+  }
+
+  /**
+   * go to home page
+   *
+   * @memberof ExploreComponent
+   */
+  onHomeClick(){
+    this.goToHomePage();
+  }
 }

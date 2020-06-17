@@ -9,9 +9,12 @@ export class NavigationBarComponent {
 
   @Output()
   searchChange: EventEmitter<string>;
+  @Output()
+  homeClick: EventEmitter<void>;
 
   constructor() {
     this.searchChange = new EventEmitter<string>();
+    this.homeClick = new EventEmitter<void>();
   }
 
   /**
@@ -22,6 +25,15 @@ export class NavigationBarComponent {
    */
   onSearchChange(searchValue: string){
     this.searchChange.emit(searchValue);
+  }
+
+  /**
+   * emit when click on home
+   *
+   * @memberof NavigationBarComponent
+   */
+  onHomeClick(){
+    this.homeClick.emit();
   }
 
 }
