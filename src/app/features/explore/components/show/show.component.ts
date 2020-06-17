@@ -27,7 +27,7 @@ export class ShowComponent implements OnInit, OnDestroy {
   /**
    * get the id of the show in the route
    *
-   * @returns {Observable<string>}
+   * @returns {Observable<number>}
    * @memberof ShowComponent
    */
   getShowId(): Observable<number>{

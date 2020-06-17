@@ -6,10 +6,17 @@ import { ExploreComponent } from './explore.component';
 import { SearchComponent } from './components/search/search.component';
 import { ShowComponent } from './components/show/show.component';
 import { InfoShowComponent } from './components/info-show/info-show.component';
+import { EpisodesComponent } from './components/episodes/episodes.component';
 
 
 @NgModule({
-  declarations: [ExploreComponent, SearchComponent, ShowComponent, InfoShowComponent],
+  declarations: [
+    ExploreComponent,
+    SearchComponent,
+    ShowComponent,
+    InfoShowComponent,
+    EpisodesComponent
+  ],
   imports: [
     CommonModule,
     ExploreRoutingModule

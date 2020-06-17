@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ScoredShow } from '../shared/models/scored-show';
 import { Observable } from 'rxjs';
 import { Show } from '../shared/models/show';
+import { Episode } from '../shared/models/episode';
 
 @Injectable()
 export class ShowsService {
@@ -34,5 +35,16 @@ export class ShowsService {
      */
     getShowById(id: number): Observable<Show>{
         return this.http.get<Show>(`${this.showsUrl}/${id}`);
+    }
+
+    /**
+     * get episodes by show id
+     *
+     * @param {number} id
+     * @returns {Observable<Show>}
+     * @memberof ShowsService
+     */
+    getEpisodesByShowId(id: number): Observable<Array<Episode>>{
+        return this.http.get<Array<Episode>>(`${this.showsUrl}/${id}/episodes`);
     }
 }
