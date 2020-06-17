@@ -11,6 +11,7 @@ export class ShowsService {
     private apiUrl = 'http://api.tvmaze.com';
     private searchUrl = `${this.apiUrl}/search/shows`;
     private showsUrl = `${this.apiUrl}/shows`;
+    private seasonsUrl = `${this.apiUrl}/seasons`;
 
     constructor(
         private http: HttpClient
@@ -68,6 +69,6 @@ export class ShowsService {
      * @memberof ShowsService
      */
     getEpisodesBySeasonId(id: number): Observable<Array<Episode>>{
-        return this.http.get<Array<Episode>>(`${this.showsUrl}/${id}/episodes`);
+        return this.http.get<Array<Episode>>(`${this.seasonsUrl}/${id}/episodes`);
     }
 }

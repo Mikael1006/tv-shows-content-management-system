@@ -1,1 +1,6 @@
-<p>season works! {{ season.number }}</p>
+<p>Season {{ season.number }}</p>
+<ul>
+    <li *ngFor="let episode of episodes">
+      {{ episode.name }}
+    </li>
+</ul>
