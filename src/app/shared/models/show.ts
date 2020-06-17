@@ -4,6 +4,7 @@ import { Network } from './network';
 import { Externals } from './externals';
 import { ShowImage } from './image';
 import { Links } from './links';
+import { WebChannel } from './web-channel';
 
 export class Show{
     id: number;
@@ -20,7 +21,7 @@ export class Show{
     rating: Rating;
     weight: number;
     network: Network;
-    webChannel: any;
+    webChannel: WebChannel;
     externals: Externals;
     image: ShowImage;
     summary: string;

@@ -1,5 +1,1 @@
-<ul>
-    <li *ngFor="let episode of episodes">
-        {{ episode.name }}
-    </li>
-</ul>
+<app-season *ngFor="let season of seasons" [season]="season"></app-season>

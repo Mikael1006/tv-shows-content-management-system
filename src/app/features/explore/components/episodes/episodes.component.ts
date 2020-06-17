@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 import { ShowStoreService } from 'src/app/services/show-store.service';
 import { ShowsService } from 'src/app/services/shows.service';
-import { Episode } from 'src/app/shared/models/episode';
+import { Season } from 'src/app/shared/models/season';
 
 @Component({
   selector: 'app-episodes',
@@ -12,7 +12,7 @@ import { Episode } from 'src/app/shared/models/episode';
 })
 export class EpisodesComponent implements OnInit, OnDestroy {
 
-  episodes: Array<Episode>;
+  seasons: Array<Season>;
   private subscriptions: Subscription;
 
   constructor(
@@ -23,23 +23,23 @@ export class EpisodesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    const subscription = this.getEpisodes().subscribe(episodes => {
-      this.episodes = episodes;
+    const subscription = this.getSeasons().subscribe(seasons => {
+      this.seasons = seasons;
     });
     this.subscriptions.add(subscription);
   }
 
   /**
-   * Get the list of episode from the show id in store
+   * Get the list of season from the show id in store
    *
-   * @returns
+   * @returns {Observable<Array<Season>>}
    * @memberof EpisodesComponent
    */
-  getEpisodes(){
+  getSeasons(): Observable<Array<Season>>{
     return this.showStoreService.getCurrentShow().pipe(
       flatMap(
         show => {
-          return this.showsService.getEpisodesByShowId(show.id);
+          return this.showsService.getSeasonsByShowId(show.id);
         }
       )
     );

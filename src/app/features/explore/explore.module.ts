@@ -7,6 +7,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ShowComponent } from './components/show/show.component';
 import { InfoShowComponent } from './components/info-show/info-show.component';
 import { EpisodesComponent } from './components/episodes/episodes.component';
+import { SeasonComponent } from './components/season/season.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { EpisodesComponent } from './components/episodes/episodes.component';
     SearchComponent,
     ShowComponent,
     InfoShowComponent,
-    EpisodesComponent
+    EpisodesComponent,
+    SeasonComponent
   ],
   imports: [
     CommonModule,
