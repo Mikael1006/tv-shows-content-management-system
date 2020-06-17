@@ -4,6 +4,7 @@
     <ul>
         <Li><p>Name: {{ show.name }}</p></Li>
         <Li *ngIf="show.network"><p>Network: {{ show.network.name }}</p></Li>
+        <Li *ngIf="show.webChannel"><p>Web Channel: {{ show.webChannel.name }}</p></Li>
         <Li><p>Status: {{ show.status }}</p></Li>
         <Li><p>Show Type: {{ show.type }}</p></Li>
         <Li><p>Language: {{ show.language }}</p></Li>
