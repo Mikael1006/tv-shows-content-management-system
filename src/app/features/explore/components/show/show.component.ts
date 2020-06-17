@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription, Observable } from 'rxjs';
-import { ShowsService } from 'src/app/services/shows.service';
-import { map } from 'rxjs/operators';
-import { Show } from 'src/app/shared/models/show';
+import { Observable, Subscription } from 'rxjs';
+import { flatMap, map } from 'rxjs/operators';
 import { ShowStoreService } from 'src/app/services/show-store.service';
+import { ShowsService } from 'src/app/services/shows.service';
+import { Show } from 'src/app/shared/models/show';
 
 @Component({
   selector: 'app-show',
@@ -37,15 +37,27 @@ export class ShowComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    const subscription = this.getShowId().subscribe(
-      id => {
-        this.showsService.getShowById(id).subscribe(show => {
-          this.show = show;
-          this.showStoreService.dispatchShowChange(this.show);
-        });
-      }
-    );
+    const subscription = this.getShow().subscribe(show => {
+      this.show = show;
+      this.showStoreService.dispatchShowChange(this.show);
+    });
     this.subscriptions.add(subscription);
+  }
+
+  /**
+   * get the show
+   *
+   * @returns {Observable<Show>}
+   * @memberof ShowComponent
+   */
+  getShow(): Observable<Show>{
+    return this.getShowId().pipe(
+      flatMap(
+        id => {
+          return this.showsService.getShowById(id);
+        }
+      )
+    );
   }
 
   ngOnDestroy(): void {
