@@ -1,9 +1,10 @@
 <div *ngIf="show">
     <ul>
         <Li><p>Name: {{ show.name }}</p></Li>
-        <Li><p>Network: {{ show.network.name }}</p></Li>
+        <Li *ngIf="show.network"><p>Network: {{ show.network.name }}</p></Li>
         <Li><p>Status: {{ show.status }}</p></Li>
         <Li><p>Show Type: {{ show.type }}</p></Li>
+        <Li><p>Language: {{ show.language }}</p></Li>
         <Li><p>Genre: <span *ngFor="let genre of show.genres">{{ genre }} | </span></p></Li>
     </ul>
 </div>
