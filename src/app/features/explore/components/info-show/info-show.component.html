@@ -1,9 +1,9 @@
-<div *ngIf="show | async as showSync">
+<div *ngIf="show">
     <ul>
-        <Li><p>Name: {{ showSync.name }}</p></Li>
-        <Li><p>Network: {{ showSync.network.name }}</p></Li>
-        <Li><p>Status: {{ showSync.status }}</p></Li>
-        <Li><p>Show Type: {{ showSync.type }}</p></Li>
-        <Li><p>Genre: <span *ngFor="let genre of showSync.genres">{{ genre }} | </span></p></Li>
+        <Li><p>Name: {{ show.name }}</p></Li>
+        <Li><p>Network: {{ show.network.name }}</p></Li>
+        <Li><p>Status: {{ show.status }}</p></Li>
+        <Li><p>Show Type: {{ show.type }}</p></Li>
+        <Li><p>Genre: <span *ngFor="let genre of show.genres">{{ genre }} | </span></p></Li>
     </ul>
 </div>
