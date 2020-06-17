@@ -16,14 +16,28 @@ export class ExploreComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * When the search change redirect to the correct url
+   *
+   * @param {string} searchValue
+   * @memberof ExploreComponent
+   */
   onSearchChange(searchValue: string){
-    const navigationExtras = {
-      relativeTo: this.route,
-      queryParams: {
-        q: searchValue
-      }
-    };
-    this.router.navigate(['search'], navigationExtras);
+    let navigationExtras;
+    if (!searchValue) {
+      navigationExtras = {
+        relativeTo: this.route
+      };
+      this.router.navigate(['schedule'], navigationExtras);
+    } else {
+      navigationExtras = {
+        relativeTo: this.route,
+        queryParams: {
+          q: searchValue
+        }
+      };
+      this.router.navigate(['search'], navigationExtras);
+    }
   }
 
 }

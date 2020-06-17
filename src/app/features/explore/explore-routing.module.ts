@@ -9,12 +9,14 @@ import { EpisodesComponent } from './components/episodes/episodes.component';
 import { EpisodeComponent } from './components/episode/episode.component';
 import { CastComponent } from './components/cast/cast.component';
 import { PeopleComponent } from './components/people/people.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ExploreComponent,
     children: [
+      { path: '', redirectTo: 'schedule' },
       { path: 'search', component: SearchComponent },
       {
         path: 'show/:id',
@@ -28,6 +30,7 @@ const routes: Routes = [
       },
       { path: 'episodes/:id', component: EpisodeComponent },
       { path: 'people/:id', component: PeopleComponent },
+      { path: 'schedule', component: ScheduleComponent }
     ]
   }
 ];

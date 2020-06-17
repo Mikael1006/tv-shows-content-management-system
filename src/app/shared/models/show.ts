@@ -1,4 +1,4 @@
-import { Schedule } from './schedule';
+import { NextSchedule } from './next-schedule';
 import { Rating } from './rating';
 import { Network } from './network';
 import { Externals } from './externals';
@@ -17,7 +17,7 @@ export class Show{
     runtime: number;
     premiered: string;
     officialSite: string;
-    schedule: Schedule;
+    schedule: NextSchedule;
     rating: Rating;
     weight: number;
     network: Network;
