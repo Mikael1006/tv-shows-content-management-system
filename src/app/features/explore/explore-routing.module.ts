@@ -6,6 +6,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ShowComponent } from './components/show/show.component';
 import { InfoShowComponent } from './components/info-show/info-show.component';
 import { EpisodesComponent } from './components/episodes/episodes.component';
+import { EpisodeComponent } from './components/episode/episode.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
           { path: 'episodes', component: EpisodesComponent }
         ]
       },
+      { path: 'episodes/:id', component: EpisodeComponent }
     ]
   }
 ];

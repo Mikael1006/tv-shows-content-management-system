@@ -11,6 +11,7 @@ export class ShowsService {
     private apiUrl = 'http://api.tvmaze.com';
     private searchUrl = `${this.apiUrl}/search/shows`;
     private showsUrl = `${this.apiUrl}/shows`;
+    private episodesUrl = `${this.apiUrl}/episodes`;
     private seasonsUrl = `${this.apiUrl}/seasons`;
 
     constructor(
@@ -37,6 +38,17 @@ export class ShowsService {
      */
     getShowById(id: number): Observable<Show>{
         return this.http.get<Show>(`${this.showsUrl}/${id}`);
+    }
+
+    /**
+     * get episode by id
+     *
+     * @param {number} id
+     * @returns {Observable<Episode>}
+     * @memberof ShowsService
+     */
+    getEpisodeById(id: number): Observable<Episode>{
+        return this.http.get<Episode>(`${this.episodesUrl}/${id}`);
     }
 
     /**

@@ -1,0 +1,5 @@
+<div *ngIf="episode">
+    <p><b>{{ episode.name }}</b> Season {{ episode.season }} Episode {{ episode.number }}</p>
+    <img src="{{ episode.image.medium }}">
+    <div [innerHTML]="episode.summary"></div>
+</div>

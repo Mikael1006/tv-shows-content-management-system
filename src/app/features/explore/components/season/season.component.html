@@ -1,6 +1,6 @@
 <p>Season {{ season.number }}</p>
 <ul>
     <li *ngFor="let episode of episodes">
-      {{ episode.name }}
+      <a routerLink="/explore/episodes/{{ episode.id }}" routerLinkActive="active">{{ episode.name }}</a>
     </li>
 </ul>
