@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ShowsService } from 'src/app/services/shows.service';
+import { ScoredShow } from 'src/app/shared/models/scored-show';
 
 @Component({
   selector: 'app-search',
@@ -11,10 +13,12 @@ import { map } from 'rxjs/operators';
 export class SearchComponent implements OnInit, OnDestroy {
 
   query: string;
+  private shows: Array<ScoredShow>;
   private subscriptions: Subscription;
 
   constructor(
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private showsService: ShowsService
     ) {
       this.subscriptions = new Subscription();
   }
@@ -32,7 +36,13 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subscriptions.add(this.getSearchQuery().subscribe(q => this.query = q));
+    const subscription = this.getSearchQuery().subscribe(
+      q => {
+        this.query = q;
+        this.showsService.getShowsByName(this.query).subscribe(shows => this.shows = shows);
+      }
+    );
+    this.subscriptions.add(subscription);
   }
 
   ngOnDestroy(): void {

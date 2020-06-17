@@ -1,1 +1,4 @@
 <p>Results for {{ query }}</p>
+<ul>
+    <li *ngFor="let show of shows">{{ show.show.name }} {{ show.score }}</li>
+</ul>
