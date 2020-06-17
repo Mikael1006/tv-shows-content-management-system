@@ -13,7 +13,7 @@ import { ScoredShow } from 'src/app/shared/models/scored-show';
 export class SearchComponent implements OnInit, OnDestroy {
 
   query: string;
-  private shows: Array<ScoredShow>;
+  shows: Array<ScoredShow>;
   private subscriptions: Subscription;
 
   constructor(

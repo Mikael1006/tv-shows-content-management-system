@@ -12,7 +12,7 @@ import { Show } from 'src/app/shared/models/show';
 })
 export class ShowComponent implements OnInit, OnDestroy {
 
-  private show: Observable<Show>;
+  show: Observable<Show>;
   private subscriptions: Subscription;
 
   constructor(
