@@ -1,5 +1,6 @@
 <div *ngIf="show">
     <img src="{{ show.image.medium }}">
+    <div [innerHTML]="show.summary"></div>
     <ul>
         <Li><p>Name: {{ show.name }}</p></Li>
         <Li *ngIf="show.network"><p>Network: {{ show.network.name }}</p></Li>
