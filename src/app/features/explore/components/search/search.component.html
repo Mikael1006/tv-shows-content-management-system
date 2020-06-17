@@ -1,6 +1,2 @@
 <p>Results for {{ query }}</p>
-<ul>
-    <li *ngFor="let show of shows">
-      <a routerLink="../show/{{ show.show.id }}" routerLinkActive="active">{{ show.show.name }} {{ show.score }}</a>
-    </li>
-</ul>
+<app-small-info-show *ngFor="let show of shows" [show]="show.show"></app-small-info-show>

@@ -1,0 +1,7 @@
+<div class="small-info-show-container">
+    <img *ngIf="show.image" src="{{ show.image.medium }}">
+    <div class="info-container">
+        <a routerLink="../show/{{ show.id }}" routerLinkActive="active">{{ show.name }}</a><span *ngIf="show.network"> ({{ show.network.name }})</span><span *ngIf="show.webChannel"> ({{ show.webChannel.name }})</span>
+        <p *ngIf="show.premiered"><b>Premiered date:</b> {{ show.premiered }}</p>
+    </div>
+</div>

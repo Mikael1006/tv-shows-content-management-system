@@ -13,6 +13,7 @@ import { CastComponent } from './components/cast/cast.component';
 import { PeopleComponent } from './components/people/people.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { SmallInfoShowComponent } from './components/small-info-show/small-info-show.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
     EpisodeComponent,
     CastComponent,
     PeopleComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    SmallInfoShowComponent
   ],
   imports: [
     CommonModule,
