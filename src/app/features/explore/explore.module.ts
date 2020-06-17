@@ -9,6 +9,7 @@ import { InfoShowComponent } from './components/info-show/info-show.component';
 import { EpisodesComponent } from './components/episodes/episodes.component';
 import { SeasonComponent } from './components/season/season.component';
 import { EpisodeComponent } from './components/episode/episode.component';
+import { CastComponent } from './components/cast/cast.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { EpisodeComponent } from './components/episode/episode.component';
     InfoShowComponent,
     EpisodesComponent,
     SeasonComponent,
-    EpisodeComponent
+    EpisodeComponent,
+    CastComponent
   ],
   imports: [
     CommonModule,

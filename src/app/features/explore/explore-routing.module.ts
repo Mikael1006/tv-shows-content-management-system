@@ -7,6 +7,7 @@ import { ShowComponent } from './components/show/show.component';
 import { InfoShowComponent } from './components/info-show/info-show.component';
 import { EpisodesComponent } from './components/episodes/episodes.component';
 import { EpisodeComponent } from './components/episode/episode.component';
+import { CastComponent } from './components/cast/cast.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
         children: [
           { path: '', redirectTo: 'info' },
           { path: 'info', component: InfoShowComponent },
-          { path: 'episodes', component: EpisodesComponent }
+          { path: 'episodes', component: EpisodesComponent },
+          { path: 'cast', component: CastComponent }
         ]
       },
       { path: 'episodes/:id', component: EpisodeComponent }

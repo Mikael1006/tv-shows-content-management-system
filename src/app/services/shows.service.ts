@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Show } from '../shared/models/show';
 import { Episode } from '../shared/models/episode';
 import { Season } from '../shared/models/season';
+import { Cast } from '../shared/models/cast';
 
 @Injectable()
 export class ShowsService {
@@ -71,6 +72,17 @@ export class ShowsService {
      */
     getSeasonsByShowId(id: number): Observable<Array<Season>>{
         return this.http.get<Array<Season>>(`${this.showsUrl}/${id}/seasons`);
+    }
+
+    /**
+     * get cast by show id
+     *
+     * @param {number} id
+     * @returns {Observable<Array<Cast>>}
+     * @memberof ShowsService
+     */
+    getCastByShowId(id: number): Observable<Array<Cast>>{
+        return this.http.get<Array<Cast>>(`${this.showsUrl}/${id}/cast`);
     }
 
     /**
