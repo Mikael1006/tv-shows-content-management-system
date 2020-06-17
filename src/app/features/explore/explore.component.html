@@ -1,4 +1,2 @@
-<div class="topnav">
-    <input (input)="onSearchChange($event.target.value)" type="text" placeholder="Search..">
-</div>
+<app-navigation-bar (searchChange)="onSearchChange($event)"></app-navigation-bar>
 <router-outlet></router-outlet>

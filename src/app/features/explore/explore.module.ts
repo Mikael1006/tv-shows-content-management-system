@@ -11,6 +11,7 @@ import { SeasonComponent } from './components/season/season.component';
 import { EpisodeComponent } from './components/episode/episode.component';
 import { CastComponent } from './components/cast/cast.component';
 import { PeopleComponent } from './components/people/people.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PeopleComponent } from './components/people/people.component';
   ],
   imports: [
     CommonModule,
-    ExploreRoutingModule
+    ExploreRoutingModule,
+    SharedModule
   ]
 })
 export class ExploreModule { }
