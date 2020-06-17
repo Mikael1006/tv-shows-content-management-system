@@ -1,1 +1,9 @@
-<p>{{ (show | async).name }}</p>
+<div *ngIf="show">
+    <p>{{ show.name }}</p>
+    <nav>
+        <a routerLink="./info" routerLinkActive="active">Info</a> |
+        <a routerLink="./episodes" routerLinkActive="active">Episodes</a> |
+        <a routerLink="./cast" routerLinkActive="active">Cast</a>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
