@@ -21,7 +21,6 @@ export class InfoShowComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const subscription = this.showStoreService.getCurrentShow().subscribe(show => {
-      console.log(show)
       this.show = show;
     });
     this.subscriptions.add(subscription);
